@@ -13,5 +13,6 @@ typedef struct {
 MyLinkedList* myLinkedListCreate();
 int myLinkedListGet(MyLinkedList* obj, int index);
 void myLinkedListAddAtHead(MyLinkedList* obj, int val);
+void myLinkedListAddAtTail(MyLinkedList* obj, int val);
 
 #endif

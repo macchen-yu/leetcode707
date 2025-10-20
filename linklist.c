@@ -28,4 +28,19 @@ int myLinkedListGet(MyLinkedList* obj, int index) {
         cur = cur->next;
     return cur->val;
 }
+/* 在尾部插入節點 */
+void myLinkedListAddAtTail(MyLinkedList* obj, int val) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->val = val;
+    node->next = NULL;
 
+    if (obj->head == NULL) {
+        obj->head = node;
+    } else {
+        Node* cur = obj->head;
+        while (cur->next)
+            cur = cur->next;
+        cur->next = node;
+    }
+    obj->size++;
+}

@@ -15,9 +15,14 @@ int main() {
     myLinkedListAddAtHead(myLinkedList,5);
     myLinkedListAddAtHead(myLinkedList,8);
     myLinkedListAddAtHead(myLinkedList,10);
+    
+    printList(myLinkedList);
     /*
     === LeetCode 707 - Design Linked List Test ===
     LinkedList: 10 -> 8 -> 5 -> NULL
      */
+    myLinkedListAddAtTail(myLinkedList,18);
+    myLinkedListAddAtTail(myLinkedList,50);
     printList(myLinkedList);
+    /*LinkedList: 10 -> 8 -> 5 -> 18 -> 50 -> NULL*/
 }
