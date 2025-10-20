@@ -64,3 +64,34 @@ void myLinkedListAddAtIndex(MyLinkedList* obj, int index, int val) {
     cur->next = node;
     obj->size++;
 }
+
+/* 刪除第 index 節點 */
+void myLinkedListDeleteAtIndex(MyLinkedList* obj, int index) {
+    if (index < 0 || index >= obj->size)
+        return;
+
+    Node* cur = obj->head;
+
+    if (index == 0) {
+        obj->head = obj->head->next;
+        free(cur);
+    } else {
+        for (int i = 0; i < index - 1; i++)
+            cur = cur->next;
+
+        Node* toDelete = cur->next;
+        cur->next = cur->next->next;
+        free(toDelete);
+    }
+    obj->size--;
+}
+/* 釋放整個鏈結串列 */
+void myLinkedListFree(MyLinkedList* obj) {
+    Node* cur = obj->head;
+    while (cur) {
+        Node* tmp = cur;
+        cur = cur->next;
+        free(tmp);
+    }
+    free(obj);
+}

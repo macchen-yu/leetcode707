@@ -30,6 +30,11 @@ int main() {
     myLinkedListAddAtIndex(myLinkedList,5,23);
     printList(myLinkedList);
     /*LinkedList: 10 -> 8 -> 23 -> 5 -> 18 -> 23 -> 50 -> NULL*/
-    
-
+    myLinkedListDeleteAtIndex(myLinkedList,2);
+    myLinkedListDeleteAtIndex(myLinkedList,4);
+    printList(myLinkedList);
+    /*LinkedList: 10 -> 8 -> 5 -> 18 -> 50 -> NULL*/
+    myLinkedListFree(myLinkedList);
+    printList(myLinkedList);
+    /*Segmentation fault (core dumped)*/
 }
