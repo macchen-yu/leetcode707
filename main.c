@@ -6,12 +6,8 @@
 int main() {
     printf("=== LeetCode 707 - Design Linked List Test ===\n");
     MyLinkedList* myLinkedList = myLinkedListCreate();
-    // 新增節點
-    Node* node = (Node*)malloc(sizeof(Node));
-    node->val = 5;
-    node->next = myLinkedList->head;
-    myLinkedList->head = node;
-    myLinkedList->size++;
+    // 新增頭部節點
+    myLinkedListAddAtHead(myLinkedList,5);
     printf("值:%d\n",myLinkedList->head->val);
     printf("鏈表大小%d\n",myLinkedList->size);
     

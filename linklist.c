@@ -10,6 +10,13 @@ MyLinkedList* myLinkedListCreate() {
     return obj;
 }
 
-
+/* 在頭部插入節點 */
+void myLinkedListAddAtHead(MyLinkedList* obj, int val) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->val = val;
+    node->next = obj->head;
+    obj->head = node;
+    obj->size++;
+}
 
 
