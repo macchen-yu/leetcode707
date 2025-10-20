@@ -25,4 +25,11 @@ int main() {
     myLinkedListAddAtTail(myLinkedList,50);
     printList(myLinkedList);
     /*LinkedList: 10 -> 8 -> 5 -> 18 -> 50 -> NULL*/
+
+    myLinkedListAddAtIndex(myLinkedList,2,23);
+    myLinkedListAddAtIndex(myLinkedList,5,23);
+    printList(myLinkedList);
+    /*LinkedList: 10 -> 8 -> 23 -> 5 -> 18 -> 23 -> 50 -> NULL*/
+    
+
 }

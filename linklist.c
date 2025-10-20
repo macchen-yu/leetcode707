@@ -44,3 +44,23 @@ void myLinkedListAddAtTail(MyLinkedList* obj, int val) {
     }
     obj->size++;
 }
+/* 在 index 前插入節點 */
+void myLinkedListAddAtIndex(MyLinkedList* obj, int index, int val) {
+    if (index < 0 || index > obj->size)
+        return;
+    if (index == 0) {
+        myLinkedListAddAtHead(obj, val);
+        return;
+    }
+
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->val = val;
+
+    Node* cur = obj->head;
+    for (int i = 0; i < index - 1; i++)
+        cur = cur->next;
+
+    node->next = cur->next;
+    cur->next = node;
+    obj->size++;
+}
