@@ -19,4 +19,13 @@ void myLinkedListAddAtHead(MyLinkedList* obj, int val) {
     obj->size++;
 }
 
+/* 取得 index 節點的值 */
+int myLinkedListGet(MyLinkedList* obj, int index) {
+    if (index < 0 || index >= obj->size)
+        return -1;
+    Node* cur = obj->head;
+    for (int i = 0; i < index; i++)
+        cur = cur->next;
+    return cur->val;
+}
 
